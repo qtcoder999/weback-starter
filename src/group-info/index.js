@@ -1,19 +1,22 @@
+const { gotoBottom } = require("../utils/utils");
 const { CSS_SELECTOR: { group, title } } = require("./constants/constants");
-const { gotoBottom, clickMore, getTotalGroupMemberCount } = require("./utils/utils");
+const { clickMoreButton, getTotalGroupMemberCount, grabInfo, getInfo } = require("./utils/utils");
 
+console.clear();
 console.log("Group info")
 
-    (function () {
-        let totalGroupMemberCount = getTotalGroupMemberCount();
-        let groupMembers = [];
+let totalGroupMemberCount = getTotalGroupMemberCount();
+console.log("totalGroupMemberCount", totalGroupMemberCount);
+console.log("getInfo().length", getInfo().length);
 
-        clickMore();
+try {
+    clickMoreButton();
+}
+catch (e) { }
 
-        while (totalGroupMemberCount === groupMembers.length) {
+while (totalGroupMemberCount !== getInfo().length) {
+    grabInfo();
+    gotoBottom(group);
+}
 
-            gotoBottom(group);
-            grabInfo();
-
-        }
-
-    })
+console.log(getInfo());

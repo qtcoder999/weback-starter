@@ -9,6 +9,9 @@ module.exports = {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
     },
+    optimization: {
+        minimize: false,
+    },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         compress: true,

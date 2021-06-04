@@ -1,5 +1,6 @@
+import { removeDuplicates } from "../../utils/utils";
 
-const { CSS_SELECTOR: { title, more, groupMemberCount } } = require("./constants/constants");
+const { CSS_SELECTOR: { title, more, groupMemberCount } } = require("../constants/constants");
 
 export let info = [];
 
@@ -16,17 +17,30 @@ export function grabInfo() {
     setInfo(info);
 }
 
-export function clickMore() {
-
-    document.querySelector(more).click();
-
+export function clickMoreButton() {
+    try {
+        document.querySelector(more).click();
+    }
+    catch (e) { console.log(e) }
 }
 
 export function setInfo(newInfo) {
-    info = [...info, newInfo]
+    info = [...info, ...newInfo]
     info = removeDuplicates(info)
 }
 
+export function getInfo() {
+    return info
+}
+
 export function getTotalGroupMemberCount() {
-    return parseInt(document.querySelector(groupMemberCount).textContent.split(' ')[0])
+    try {
+
+        const memberCount = parseInt(document.querySelector(groupMemberCount).textContent.split(' ')[0]);
+        console.log("Member count : ", memberCount);
+        return parseInt(memberCount);
+    }
+    catch (e) {
+        console.log(e)
+    }
 }

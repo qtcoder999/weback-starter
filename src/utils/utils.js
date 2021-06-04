@@ -3,7 +3,7 @@ export function removeDuplicates(info) {
 }
 
 export function gotoBottom(selector) {
-    var element = document.querySelector(selector);
-
-    element.scrollTop = element.scrollHeight - element.clientHeight;
+    const element = document.querySelector(selector);
+    // element.scrollIntoView(false)
+    element.scrollTop += 10;
 }
