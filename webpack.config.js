@@ -15,6 +15,7 @@ module.exports = {
         port: 9000,
     },
     mode: 'production',
+    watch: true
 };
 
 
