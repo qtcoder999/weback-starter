@@ -8,7 +8,7 @@ export function grabInfo() {
     const titles = document.querySelectorAll(title);
     let info = [];
 
-    titles.forEach((value, index) => {
+    titles.forEach((value) => {
 
         info.push(value.textContent);
 
