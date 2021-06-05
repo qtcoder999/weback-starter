@@ -17,7 +17,7 @@ catch (e) { }
 
 (async function () {
 
-    while (totalGroupMemberCount !== getInfo().length) {
+    while ((totalGroupMemberCount - 2) !== getInfo().length) {
         grabInfo();
         gotoBottom(group);
         await sleep(3000);
