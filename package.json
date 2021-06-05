@@ -7,5 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx webpack"
+  },
+  "dependencies": {
+    "copy-to-clipboard": "^3.3.1"
   }
 }
