@@ -5,6 +5,7 @@ const { CSS_SELECTOR: { title, more, groupMemberCount } } = require("../constant
 export let info = [];
 
 export function grabInfo() {
+
     const titles = document.querySelectorAll(title);
     let info = [];
 

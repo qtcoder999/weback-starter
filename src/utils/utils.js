@@ -27,3 +27,17 @@ export function copyToClipboard(text) {
     document.execCommand("copy");
     document.body.removeChild(dummy);
 }
+
+export const removeSelectors = selectorArray => {
+
+    selectorArray &&
+        selectorArray.map(singleSelection => {
+            const selection = document.querySelector(singleSelection);
+            if (selection) {
+
+
+                document.querySelector(singleSelection).remove();
+                console.log("Ads removed");
+            }
+        });
+};

@@ -1,5 +1,5 @@
-const { gotoBottom, sleep } = require("../utils/utils");
-const { CSS_SELECTOR: { group, title } } = require("./constants/constants");
+const { gotoBottom, sleep, removeSelectors } = require("../utils/utils");
+const { CSS_SELECTOR: { group, remove } } = require("./constants/constants");
 const { clickMoreButton, getTotalGroupMemberCount, grabInfo, getInfo } = require("./utils/utils");
 
 console.clear();
@@ -10,8 +10,8 @@ console.log("totalGroupMemberCount", totalGroupMemberCount);
 console.log("getInfo().length", getInfo().length);
 
 try {
-    grabInfo();
     clickMoreButton();
+    grabInfo();
 }
 catch (e) { }
 
@@ -20,7 +20,7 @@ catch (e) { }
     while (totalGroupMemberCount !== getInfo().length) {
         grabInfo();
         gotoBottom(group);
-        await sleep(2000);
+        await sleep(3000);
         console.log(getInfo().length);
     }
 
