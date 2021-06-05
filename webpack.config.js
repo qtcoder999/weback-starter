@@ -4,6 +4,7 @@ module.exports = {
     entry: {
         group: './src/group-info/index.js',
         message: './src/message-info/index.js',
+        match: './src/match/index.js',
     },
     output: {
         filename: '[name].js',
